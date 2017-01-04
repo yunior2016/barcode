@@ -218,7 +218,7 @@ class DNS2D {
                     if ($imagick) {
                         $bar->rectangle($x, $y, ($x + $w), ($y + $h));
                     } else {
-                        imagefilledrectangle($png, $x, $y, ($x + $w), ($y + $h), $fgcol);
+                        imagefilledrectangle($png, $x, $y, ($x + $w - 1), ($y + $h - 1), $fgcol); 
                     }
                 }
                 $x += $w;
@@ -308,7 +308,7 @@ class DNS2D {
                     if ($imagick) {
                         $bar->rectangle($x, $y, ($x + $w), ($y + $h));
                     } else {
-                        imagefilledrectangle($png, $x, $y, ($x + $w), ($y + $h), $fgcol);
+                        imagefilledrectangle($png, $x, $y, ($x + $w - 1), ($y + $h - 1), $fgcol);
                     }
                 }
                 $x += $w;
