@@ -180,12 +180,15 @@ class DNS2D {
      * @public
      */
     public function getBarcodePNG($code, $type, $w = 3, $h = 3, $color = array(0, 0, 0)) {
+        $w = (int)$w;
+        $w = (int)$h;
         if (!$this->store_path) {
             $this->setStorPath(app('config')->get("barcode.store_path"));
         }
         //set barcode code and type
         $this->setBarcode($code, $type);
         // calculate image size
+      //  dd('num_cols: '.$this->barcode_array['num_cols'].' w: '.$w);
         $width = ($this->barcode_array['num_cols'] * $w);
         $height = ($this->barcode_array['num_rows'] * $h);
         if (function_exists('imagecreate')) {
